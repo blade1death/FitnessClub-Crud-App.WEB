@@ -1,0 +1,65 @@
+﻿@model IEnumerable<FitnessClub.Domain.DTO.Raspisanie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vidzanatii)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nachalozanatii)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prodolshitelnost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdentificatortrenerNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.НазваниеgruppiNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vidzanatii)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nachalozanatii)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prodolshitelnost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdentificatortrenerNavigation.Dolshnost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.НазваниеgruppiNavigation.Названиеgruppi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Identificatorraspisania">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Identificatorraspisania">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Identificatorraspisania">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

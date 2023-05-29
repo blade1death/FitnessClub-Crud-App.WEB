@@ -1,0 +1,72 @@
+﻿@model NewClientViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Client</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Fio" class="control-label"></label>
+                <input asp-for="Fio" class="form-control" />
+                <span asp-validation-for="Fio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dataroshdenia" class="control-label"></label>
+                <input type="date" asp-for="Dataroshdenia" class="form-control" />
+                <span asp-validation-for="Dataroshdenia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pol" class="control-label"></label>
+                <input asp-for="Pol" class="form-control" />
+                <span asp-validation-for="Pol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ves" class="control-label"></label>
+                <input asp-for="Ves" class="form-control" />
+                <span asp-validation-for="Ves" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rost" class="control-label"></label>
+                <input asp-for="Rost" class="form-control" />
+                <span asp-validation-for="Rost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nashaloabonimenta" class="control-label"></label>
+                <input type="date"  asp-for="Nashaloabonimenta" class="form-control" />
+                <span asp-validation-for="Nashaloabonimenta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Okonshanie" class="control-label"></label>
+                <input type="date" asp-for="Okonshanie" class="form-control" />
+                <span asp-validation-for="Okonshanie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telephone" class="control-label"></label>
+                <input asp-for="Telephone" class="form-control" />
+                <span asp-validation-for="Telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Названиеgruppi" class="control-label"></label>
+                <select asp-for="Названиеgruppi" class="form-control" asp-items="@Model.GruppaNames"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

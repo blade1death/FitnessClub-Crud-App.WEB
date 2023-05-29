@@ -1,0 +1,38 @@
+﻿@model FitnessClub.Domain.DTO.Gruppa
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Создать</h1>
+
+<h4>Группа</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Названиеgruppi" class="control-label"></label>
+                <input asp-for="Названиеgruppi" class="form-control" />
+                <span asp-validation-for="Названиеgruppi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Примечание" class="control-label"></label>
+                <input asp-for="Примечание" class="form-control" />
+                <span asp-validation-for="Примечание" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,56 @@
+﻿@model NewRaspisanieViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Raspisanie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Vidzanatii" class="control-label"></label>
+                <input asp-for="Vidzanatii" class="form-control" />
+                <span asp-validation-for="Vidzanatii" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zal" class="control-label"></label>
+                <input asp-for="Zal" class="form-control" />
+                <span asp-validation-for="Zal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nachalozanatii" class="control-label"></label>
+                <input type="date" asp-for="Nachalozanatii" class="form-control" />
+                <span asp-validation-for="Nachalozanatii" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prodolshitelnost" class="control-label"></label>
+                <input asp-for="Prodolshitelnost" class="form-control" />
+                <span asp-validation-for="Prodolshitelnost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Названиеgruppi" class="control-label"></label>
+                <select asp-for="Названиеgruppi" class="form-control" asp-items="@Model.GruppaNames"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Identificatortrener" class="control-label"></label>
+                <select asp-for="Identificatortrener" class="form-control" asp-items="@Model.TrenerFio"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

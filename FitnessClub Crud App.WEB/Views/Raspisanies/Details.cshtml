@@ -1,0 +1,54 @@
+﻿@model FitnessClub.Domain.DTO.Raspisanie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Raspisanie</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Vidzanatii)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Vidzanatii)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Zal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Zal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nachalozanatii)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nachalozanatii)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Prodolshitelnost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Prodolshitelnost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdentificatortrenerNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdentificatortrenerNavigation.Dolshnost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.НазваниеgruppiNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.НазваниеgruppiNavigation.Названиеgruppi)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Identificatorraspisania">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

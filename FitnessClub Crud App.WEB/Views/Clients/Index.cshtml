@@ -1,0 +1,83 @@
+﻿@model IEnumerable<FitnessClub.Domain.DTO.Client>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dataroshdenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ves)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nashaloabonimenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Okonshanie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telephone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.НазваниеgruppiNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dataroshdenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ves)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nashaloabonimenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Okonshanie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telephone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.НазваниеgruppiNavigation.Названиеgruppi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Nomerabonimenta">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Nomerabonimenta">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Nomerabonimenta">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
